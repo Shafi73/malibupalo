@@ -10,6 +10,9 @@ import HamburgerMenu from "../../../atoms/hamburger-menu";
 import "./navbar.m.css";
 
 const getNavbarMenu = menu => {
+
+
+  console.log(menu,"menu")
   return (
     <ul styleName="navbar">
       {menu.length > 0 &&
@@ -47,6 +50,7 @@ const NavBar = () => {
     if (!isHamburgerMenuOpen) {
       return null;
     }
+
     return (
       <Fragment>
         <div styleName="overlay" onClick={() => toggleHandler()}></div>

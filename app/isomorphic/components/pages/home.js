@@ -3,13 +3,15 @@ import { object, shape } from "prop-types";
 import React from "react";
 import { getCollectionTemplate } from "../get-collection-template";
 
-export const HomePage = props => (
+export const HomePage = props => {
+
+  return(
   <div className="container">
     <LazyLoadImages>
       <LazyCollection collection={props.data.collection} collectionTemplates={getCollectionTemplate} lazyAfter={2} />
     </LazyLoadImages>
   </div>
-);
+)};
 
 HomePage.propTypes = {
   data: shape({
