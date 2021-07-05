@@ -1,0 +1,25 @@
+asset_host: http://localhost:8080
+sketches_host: https://bn.prothom-alo.com
+host_to_api_host:
+  help.lvh.me: https://user-documentation.quintype.io
+host_to_automatic_api_host:
+  - "-web"
+  - ".malibu"
+domain_mapping:
+  subdomain.lvh.me: subdomain
+
+publisher:
+  timezone: "Asia/Baku"
+  google_tag_manager:
+    id: "gtm-id"
+    is_enable: true
+  google_analytics:
+    id: "ga-id"
+    is_enable: true
+  breaking_news:
+    is_enable: true
+    interval: 120
+    item_display: 1
+    open_in_new_tab: false
+    pages: [home-page, section-page, tag-page, search-page, story-page, catalog-page, static-page, form-page]
+  should_use_collection: true
