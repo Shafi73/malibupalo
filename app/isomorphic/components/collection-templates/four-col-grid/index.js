@@ -6,6 +6,7 @@ import { StoryGrid } from "../../story-grid";
 import "./four-col-grid.m.css";
 
 export function FourColGrid({ collection, stories }) {
+
   return (
     <div>
       <h2 styleName="heading">{collection.name}</h2>

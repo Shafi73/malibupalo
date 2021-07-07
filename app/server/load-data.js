@@ -14,7 +14,7 @@ import { loadFormPageData } from "./data-loaders/form-page-data";
 import { getNavigationMenuArray } from "./data-loaders/menu-data";
 import { loadCollectionPageData } from "./data-loaders/collection-page-data";
 import { loadAuthorPageData } from "./data-loaders/author-page-data";
-import { loadDigitalPageData } from "./data-loaders/digital-page-data";
+// import { DigitalPageData } from "./data-loaders/digital-page-data";
 
 import { PAGE_TYPE } from "../isomorphic/constants";
 
@@ -83,14 +83,13 @@ export function loadData(pageType, params, config, client, { host, next, domainS
       case PAGE_TYPE.AUTHOR_PAGE:
         return loadAuthorPageData(client, params.authorSlug, config);
      case PAGE_TYPE.DIGITAL_PAGE:
-        return loadDigitalPageData(client, params.authorSlug, config);
+        return loadHomePageData(client, config, params.collectionSlug);
       default:
         return Promise.resolve({ error: { message: "No Loader" } });
     }
   }
 
   return _loadData().then(data => {
-    console.log(data,"client")
     return {
       httpStatusCode: data.httpStatusCode || 200,
       pageType: data.pageType || pageType,

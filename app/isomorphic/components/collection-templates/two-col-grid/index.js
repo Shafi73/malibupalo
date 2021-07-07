@@ -34,7 +34,7 @@ function HorizontalStoryCard({story}) {
 
 
 export function TwoColGrid({ collection, stories, associatedMetadata }) {
-  console.log(stories,"collection")
+  console.log(collection,"collection name")
   return (
     <div>
       <h3 styleName="heading">{collection.name}</h3>

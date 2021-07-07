@@ -6,4 +6,4 @@ export { CatalogPage } from "../components/pages/catalog";
 export { NotFoundPage } from "../components/pages/not-found";
 export { CollectionPage } from "../components/pages/collection-page";
 export { AuthorPage } from "../components/pages/author-page";
-export { DigitalPage } from "../components/pages/digital";
+export { DigitalPage,DigitalPagePreview } from "../components/pages/digital";

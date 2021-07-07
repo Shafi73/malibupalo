@@ -4,7 +4,6 @@ import React from "react";
 import { getCollectionTemplate } from "../get-collection-template";
 
 export const HomePage = props => {
-
   return(
   <div className="container">
     <LazyLoadImages>

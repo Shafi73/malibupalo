@@ -16,6 +16,11 @@ export async function loadHomePageData(client, config, slug = "home") {
       defaultNestedLimit: 5
     }
   );
+
+
+  console.log(collection, "datas")
+
+
   return {
     collection: collection.asJson(),
     cacheKeys: collection.cacheKeys(config["publisher-id"])

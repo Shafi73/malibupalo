@@ -1,27 +1,21 @@
-import { Author } from "@quintype/framework/server/api-client";
-import get from "lodash/get";
+import { Collection } from "@quintype/framework/server/api-client";
+import { getStoryLimits, getNestedCollectionLimit } from "../../isomorphic/components/get-collection-template";
 
-import { storyFields } from "../../isomorphic/constants";
+export async function DigitalPageData(client, config, slug = "digital") {
+  const collection = await Collection.getCollectionBySlug(
+    client,
+    slug,
+    { "item-type": "collection" },
+    {
+      depth: 2,
+      storyLimits: getStoryLimits(),
+      nestedCollectionLimit: getNestedCollectionLimit(),
+      defaultNestedLimit: 5
+    }
+  );
 
-export function loadDigitalPageData(client, authorSlug, config) {
-
-
-  console.log("client")
-  let authorDetails = {};
-  const params = { author: authorSlug, sort: "published-at", fields: storyFields, limit: 20 };
-
-  return Author.getAuthor(client, authorSlug)
-
-    .then(authorData => {
-      authorDetails = authorData || {
-        cacheKeys: () => {}
-      };
-      const authorId = get(authorDetails, ["author", "id"]);
-      return Author.getAuthorCollection(client, authorId, params);
-    })
-    .then(storiesData => ({
-      author: authorDetails.author,
-      stories: storiesData.items,
-      cacheKeys: authorDetails.cacheKeys(config["publisher-id"])
-    }));
+  return {
+    collection: collection.asJson(),
+    cacheKeys: collection.cacheKeys(config["publisher-id"])
+  };
 }
