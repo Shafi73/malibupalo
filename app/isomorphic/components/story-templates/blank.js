@@ -5,6 +5,7 @@ import { WithLazy, ResponsiveImage, StoryElement } from "@quintype/components";
 import "./blank.m.css";
 
 function StoryCard(props) {
+  console.log("story")
   return (
     <div styleName="story-card">
       {props.card["story-elements"].map(element => {

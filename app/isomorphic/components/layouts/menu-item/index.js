@@ -6,9 +6,6 @@ import "./menu-item.m.css";
 
 const MenuItem = ({ item, toggleHandler, menuStyle = "menu-link" }) => {
 
-
-    console.log(item,"item")
-
   if (item["item-type"] === "placeholder") {
     return <span styleName="menu-link">{item.title}</span>;
   } else if (item["item-type"] === "link") {

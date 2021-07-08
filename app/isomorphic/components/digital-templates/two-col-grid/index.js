@@ -22,19 +22,19 @@ function HorizontalStoryCard({story}) {
             // imgParams=
           />
         </figure>
-        <h2 styleName="card-title">{story.headline}</h2>
+        <h2>{story.headline}</h2>
       </div>
     </Link>
   );
 }
 
 
-export function TwoColGrid({ collection, stories }) {
+export function TwoColGrid(props) {
   return (
     <div>
-      <h3 styleName="heading">{collection.name}</h3>
+      <h3>{props.collection.name}</h3>
       <div styleName="wrapper">
-        {stories.map((story, index) => (
+        {props.stories.map((story, index) => (
           <HorizontalStoryCard story={story} key={`${index}-${story.id}`}/>
         ))}
       </div>

@@ -7,9 +7,7 @@ import { getCollectionTemplate } from "../get-digital-template";
 export const DigitalPage = props => {
   return (
     <div className="container">
-
         <LazyCollection collection={props.data.collection} collectionTemplates={getCollectionTemplate} lazyAfter={2} />
-
     </div>
   );
 };

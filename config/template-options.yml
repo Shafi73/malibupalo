@@ -2,3 +2,9 @@ collection-layouts:
 - name: FourColGrid
   display: Default Malibu Widget
   options: []
+- name: TwoColGrid
+  display: Two Column Grid
+  options:
+  - name: color_scheme
+    type: string
+

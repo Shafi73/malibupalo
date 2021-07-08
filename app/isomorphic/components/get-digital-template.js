@@ -1,6 +1,7 @@
 import templates from "./digital-templates/index";
 
 export function getCollectionTemplate(designTemplate, index) {
+  console.log(templates,"templates")
   return templates[designTemplate] || templates.defaultTemplate;
 }
 

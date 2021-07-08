@@ -3,8 +3,6 @@ import { Collection } from "@quintype/framework/server/api-client";
 import { getStoryLimits, getNestedCollectionLimit } from "../../isomorphic/components/get-collection-template";
 
 export async function loadHomePageData(client, config, slug = "home") {
-
-  console.log("home page")
   const collection = await Collection.getCollectionBySlug(
     client,
     slug,
@@ -16,11 +14,6 @@ export async function loadHomePageData(client, config, slug = "home") {
       defaultNestedLimit: 5
     }
   );
-
-
-  console.log(collection, "datas")
-
-
   return {
     collection: collection.asJson(),
     cacheKeys: collection.cacheKeys(config["publisher-id"])

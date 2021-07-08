@@ -1,6 +1,7 @@
 .heading {
   font-size: 20px;
   text-transform: uppercase;
+  margin-top: 7px;
 }
 
 .horizontal-card {
@@ -15,7 +16,7 @@
 }
 
 .card-title {
-  font-size: 24px;
+  font-size: 12px;
   line-height: 1.4;
   font-weight: bold;
 }
